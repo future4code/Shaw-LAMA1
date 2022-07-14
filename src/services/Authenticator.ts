@@ -1,5 +1,6 @@
 import * as jwt from "jsonwebtoken";
 import { AuthenticationData } from "../types/AuthenticatorData";
+
 export class Authenticator {
 
     generateToken(info: AuthenticationData): string{
@@ -13,14 +14,12 @@ export class Authenticator {
         return token;
     }
 
-    getTokenData(token: string): AuthenticationData {
-
-        const payload = jwt.verify(
-            token,
-            process.env.JWT_KEY as string
-        );
-
-        return payload as AuthenticationData
-
+    public getData = (token: string): AuthenticationData => {
+        const data = jwt.verify(token, process.env.JWT_KEY as string) as AuthenticationData
+        const result = {
+          id: data.id,
+          role: data.role
+        };
+        return result;
     }
 }
