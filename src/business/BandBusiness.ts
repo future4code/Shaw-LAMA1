@@ -1,14 +1,14 @@
 import { BandDataBase } from "../data/BandDataBase";
-import { BaseDatabase } from "../data/BaseDataBase";
 import Band from "../model/Band";
 import { Authenticator } from "../services/Authenticator";
-import { IdGenerator } from "../services/Generator";
+import  IdGenerator  from "../services/Generator";
 import { BandInputDTO } from "../types/BandInputDTO";
 
 export default class BandBusiness {
     constructor(
         private bandDataBase: BandDataBase,
-        private authenticator: Authenticator
+        private authenticator: Authenticator,
+        private idGenerator: IdGenerator
     ){}
 
     async createBand(band:BandInputDTO, token:string){
@@ -40,7 +40,7 @@ export default class BandBusiness {
             throw new Error('Invalid values')
         }
 
-        const id = IdGenerator.generateId()
+        const id = this.idGenerator.generateId()
 
         const modelBand = new Band(
             id,
@@ -48,10 +48,11 @@ export default class BandBusiness {
             music_genre,
             responsible
         )
+        console.log(modelBand);
+        
 
-        const newBand = await this.bandDataBase.insertBand(modelBand)
-
-        return newBand
+        await this.bandDataBase.insertBand(modelBand)
+        
     } 
 
     async getBandById(id:string, token:string){

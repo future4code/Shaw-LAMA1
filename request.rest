@@ -1,14 +1,14 @@
 
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2MjllMzEwLWFmOTMtNGU3Yy04MjVhLTBmMDgyYzdmY2RhZCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1Nzg5OTcxMn0.tZ5eX8No3IXZBHDwj-FKzksZSObJylXEXEnXWIkZ7zs
 
 POST http://localhost:3003/user/signUp
 Content-Type: application/json
 
 {
-    "name":"cleiton",
-    "email":"cleitinho@gmail.com",
-    "password":"cleiton123",
-    "role":"NORMAL"
+    "name":"Matheus",
+    "email":"matheus@gmail.com",
+    "password":"12345678",
+    "role":"ADMIN"
 }
 
 
@@ -19,15 +19,31 @@ Content-Type: application/json
 
 {
 
-    "email": "cleitinho@gmail.com",
-    "password":"cleiton123"
+    "email": "matheus@gmail.com",
+    "password":"12345678"
 
 }
 
 
+### 
+
+POST http://localhost:3003/band/adicionar
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+     "name": "Anitta e sua banda",
+     "music_genre": "Pop/Funk",
+     "responsible": "Anitta"
+}
+
 
 ###
 
+GET http://localhost:3003/band/9bd4adbf-aa46-4730-ad7b-16ad564061d2
+Authorization: {{token}}
+
+###
 
 POST http://localhost:3003/shows/register
 Content-Type: application/json
@@ -50,5 +66,4 @@ Content-Type: application/json
 
 {
 "week_day": ""
-
 }

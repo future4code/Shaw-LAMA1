@@ -6,7 +6,7 @@ export default class BandController {
     constructor(
         private bandBusiness: BandBusiness
     ) { }
-    async createBandController(req: Request, res: Response) {
+     createBandController = async (req: Request, res: Response)=> {
 
         try {
             const { name, music_genre, responsible } = req.body
@@ -17,16 +17,20 @@ export default class BandController {
                 name, music_genre, responsible
             }
 
-            await this.bandBusiness.createBand(input, token)
+            const result = await  this.bandBusiness.createBand(input, token)
 
+            console.log(result)
+            
             res.status(201).send({message: "Added band"})
 
         } catch (error: any) {
+            console.log(error.message);
+            console.log( error.sqlMessage);
             res.send({ message: error.sqlMessage || error.message })
         }
     }
 
-    async getBandByIdController(req:Request, res:Response){
+     getBandByIdController = async (req:Request, res:Response) =>{
         try{
             const id:string = req.params.id
 

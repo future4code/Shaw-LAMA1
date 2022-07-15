@@ -19,6 +19,7 @@ export class UserController {
             }
 
             const token = await this.userBussines.inputSignup(inputUser)
+            
             res.status(201).send({message:"User Createad",token})
 
             
