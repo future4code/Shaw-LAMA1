@@ -9,7 +9,7 @@ export class Authenticator {
             {id: info.id,
             role: info.role},
             process.env.JWT_KEY as string,
-            {expiresIn: process.env.JWT_EXPIRATION_TIME}
+           
         )
         return token;
     }
