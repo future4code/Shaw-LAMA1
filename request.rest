@@ -24,6 +24,7 @@ Content-Type: application/json
 
 }
 
+
 ### 
 
 POST http://localhost:3003/band/adicionar
@@ -36,7 +37,33 @@ Content-Type: application/json
      "responsible": "Anitta"
 }
 
+
 ###
 
 GET http://localhost:3003/band/9bd4adbf-aa46-4730-ad7b-16ad564061d2
 Authorization: {{token}}
+
+###
+
+POST http://localhost:3003/shows/register
+Content-Type: application/json
+
+
+{
+
+        "week_day":"" ,
+         "start_time":"" ,
+         "end_time": "",
+         "band_id": ""
+
+}
+
+
+###
+
+GET http://localhost:3003/shows/getAllshows
+Content-Type: application/json
+
+{
+"week_day": ""
+}
