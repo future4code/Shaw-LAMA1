@@ -29,11 +29,10 @@ export class UserBussines{
             throw new Error("password need to have at least 6 characters")
         }
        
-     const id = this.idGenerate.generateId()
+        const id = this.idGenerate.generateId()
 
         const hashpassword = await this.hashManager.hash(inputUser.password)
 
-     
         const user = new User(
             id,
             name,

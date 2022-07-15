@@ -3,13 +3,14 @@ import { BaseDatabase } from "./BaseDataBase";
 
 
 export class BandDataBase extends BaseDatabase{
-    protected TABLE_NAME = "tabela_shows"
+    protected TABLE_NAME = "bands"
 
     async insertBand(band:Band){
         try{
-            await this.connection(this.TABLE_NAME)
+           const result =  await this.connection(this.TABLE_NAME)
             .insert(band)
-            
+
+            return result
         }catch (error:any){
             throw new Error(error.sqlMessage || error.message)
         }
@@ -18,9 +19,9 @@ export class BandDataBase extends BaseDatabase{
     async selectNameBand(name:string){
         try{
             const [result] = await this.connection(this.TABLE_NAME)
-            .select("name")
+            .select("*")
             .where({name})
-
+            
             return result
 
         }catch(error:any){
