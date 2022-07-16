@@ -1,6 +1,6 @@
 import { Router } from "express";
 import ShowController from "../controller/ShowController";
-import ShowBussines from "../ShowBussines";
+import ShowBussines from "../business/ShowBussines";
 
 export const showsRouter = Router()
 

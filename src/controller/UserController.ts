@@ -1,5 +1,5 @@
 
-import { UserBussines } from "../userBussines";
+import { UserBussines } from "../business/userBussines";
 import { SignupDTO } from "../types/SignupDTO";
 import { Request, Response } from "express";
 import { LoginDTO } from "../types/LoginDTO";

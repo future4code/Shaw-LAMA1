@@ -1,10 +1,11 @@
-import  UserData  from "./data/userData";
-import User from "./model/User";
-import { Authenticator } from "./services/Authenticator";
-import IdGenerator from "./services/Generator";
-import { HashManager } from "./services/HashManage";
-import { LoginDTO } from "./types/LoginDTO";
-import { SignupDTO } from "./types/SignupDTO";
+import  UserData  from "../data/userData";
+import { CustomError } from "../error/CustomError";
+import User from "../model/User";
+import { Authenticator } from "../services/Authenticator";
+import IdGenerator from "../services/Generator";
+import { HashManager } from "../services/HashManage";
+import { LoginDTO } from "../types/LoginDTO";
+import { SignupDTO } from "../types/SignupDTO";
 
 export class UserBussines{
     constructor(
@@ -18,15 +19,18 @@ export class UserBussines{
         const {name,email,password,role}=inputUser
         
         if(!name || !email || !password ){
-            throw new Error("Invalid fields")
+            throw new CustomError(406,"Invalid fields")
 
         }
-        // if(name || email){
-        //     throw new Error("name and email is already registered")
-        // }
+
+        const registeredUser = await this.userData.findByEmail(email)
+       
+        if(registeredUser){
+            throw new CustomError(409,"User already registered")
+        }
 
         if(password.length < 6){
-            throw new Error("password need to have at least 6 characters")
+            throw new CustomError(406,"password need to have at least 6 characters")
         }
        
         const id = this.idGenerate.generateId()
@@ -55,7 +59,7 @@ export class UserBussines{
 
         
         if(!email || !password){
-            throw new Error("email or password invalid")
+            throw new CustomError(406,"Email or password invalid")
         }
         const userFromDB = await this.userData.findByEmail(email) 
         
@@ -63,7 +67,7 @@ export class UserBussines{
         const passwordIsCorrect = await this.hashManager.compare(password,userFromDB.password)
         
         if(!passwordIsCorrect){
-            throw new Error("password is invalid")
+            throw new CustomError(401,"Password is invalid")
         }
        
     const token = this.authenticator.generateToken({id:userFromDB.id ,role:userFromDB.role})

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import ShowBussines from "../ShowBussines";
+import ShowBussines from "../business/ShowBussines";
 import { ShowDTO } from "../types/ShowDTO";
 export default class ShowController {
     constructor(

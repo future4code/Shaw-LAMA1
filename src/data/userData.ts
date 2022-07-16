@@ -6,8 +6,7 @@ export default class UserData extends BaseDatabase {
     insert = async (user: User) => {
         try {
             await this.connection(this.TABLE_NAME)
-                .insert(user)
-                
+                .insert(user)   
 
         } catch (error: any) {
             throw new Error(error.sqlMessage)
@@ -19,7 +18,7 @@ export default class UserData extends BaseDatabase {
           const [result] = await this.connection(this.TABLE_NAME)
                 .select('*')
                 .where({ email })
-               console.log(result)
+              
                 return result
         } catch (error: any) {
             throw new Error(error.sqlMessage)
