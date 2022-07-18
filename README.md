@@ -27,7 +27,7 @@ Endpoints não feitos ou não finalizados:
 
 Documentação API:
 
-- 
+- https://documenter.getpostman.com/view/20354123/UzQvtk8g
 
 
 *** Infelizmente tivemos problemas com os testes e não conseguimos completa-los. 
