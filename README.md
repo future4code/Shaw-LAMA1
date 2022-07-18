@@ -28,3 +28,6 @@ Endpoints não feitos ou não finalizados:
 Documentação API:
 
 - 
+
+
+* Infelizmente tivemos problemas com os testes e não conseguimos completa-los. 
