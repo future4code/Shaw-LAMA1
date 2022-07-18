@@ -1,4 +1,5 @@
 import { BandDataBase } from "../data/BandDataBase";
+import { CustomError } from "../error/CustomError";
 import Band from "../model/Band";
 import { Authenticator } from "../services/Authenticator";
 import  IdGenerator  from "../services/Generator";
@@ -14,14 +15,14 @@ export default class BandBusiness {
     async createBand(band:BandInputDTO, token:string){
        
         if (!token) {
-            throw new Error('Not authorized')
+            throw new CustomError(401,'Not authorized')
         }
 
         const authenticatorRole = this.authenticator.getData(token)
 
         if(authenticatorRole.role !== "ADMIN"){
 
-            throw new Error('Invalid values')
+            throw new CustomError(406,'Invalid values')
         }
 
         const {name, music_genre, responsible} = band
@@ -29,15 +30,15 @@ export default class BandBusiness {
         const registeredNameBand = await this.bandDataBase.selectNameBand(name)
        
         if(registeredNameBand){
-            throw new Error("Band already registered")
+            throw new CustomError(409,"Band already registered")
         }
 
         if (!name || !music_genre || !responsible) {
-            throw new Error('Fill in the fields, please')
+            throw new CustomError(406,'Fill in the fields, please')
         }
 
         if (name !== String(name) || music_genre !== String(music_genre) || responsible !== String(responsible)) {
-            throw new Error('Invalid values')
+            throw new CustomError(406,'Invalid values')
         }
 
         const id = this.idGenerator.generateId()
@@ -58,18 +59,18 @@ export default class BandBusiness {
     async getBandById(id:string, token:string){
 
         if (!token) {
-            throw new Error('Not authorized')
+            throw new CustomError(401,'Not authorized')
         }
         
 
         if (!id) {
-            throw new Error('Fill in the fields, please')
+            throw new CustomError(406,'Fill in the fields, please')
         }
 
         const band = await this.bandDataBase.selectBandById(id)
 
         if (!band) {
-            throw new Error('Post not found!')
+            throw new CustomError(404,'Post not found!')
         }
 
         return band
