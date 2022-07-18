@@ -35,5 +35,16 @@ Documentação API:
 Link Heroku:
 - **https://lamaa-show.herokuapp.com/**
 
+Devs
+
+<table>
+ 
+ <td> <a href="https://github.com/sabrinapiress"><img style="border-radius:50%;" src="https://avatars.githubusercontent.com/u/99099328?v=4" width="100ox;" alt="imagem Perfil Sabrina Pires dev"/><br/><sub><b>Sabrina Pires</b></sub></a><br/>
+<td> <a href="https://github.com/Mouramattheus"><img style="border-radius:50%;" src="https://avatars.githubusercontent.com/u/61365431?v=4" width="100ox;" alt="imagem Perfil Matheus Moura dev"/><br/><sub><b>Matheus Moura</b></sub></a><br/>
+
+
+</table>
+
+
 
 *** Infelizmente tivemos problemas com os testes e não conseguimos completa-los. 
