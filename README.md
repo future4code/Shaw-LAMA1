@@ -1,5 +1,9 @@
 Labenu Music Awards 🎵🎤🎸
 
+![Monochrome Blue Geometric Music Festival Poster](https://user-images.githubusercontent.com/61365431/179442683-f37cf6e6-79d3-477b-afcf-bf31d1bf2fed.png)
+
+###
+
 o LAMA, *Labenu Musical Awards*, um festival com várias bandas famosas para a formatura da sua turma e, no final, vocês podem eleger a banda que mais gostaram! Entretanto, na opinião dele, vocês só serão merecedores se entregarem um sistema impecável que permita o gerenciamento completo desses shows.
 
 ⚙️ Endpoits criados:
