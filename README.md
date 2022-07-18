@@ -1,4 +1,4 @@
-Labenu Music Awards 🎵🎤🎸
+
 
 ![Monochrome Blue Geometric Music Festival Poster](https://user-images.githubusercontent.com/61365431/179442683-f37cf6e6-79d3-477b-afcf-bf31d1bf2fed.png)
 
