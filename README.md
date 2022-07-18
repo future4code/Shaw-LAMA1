@@ -31,9 +31,9 @@ Documentação API:
 
 - https://documenter.getpostman.com/view/20354123/UzQvtk8g
 
-###
-Link Heroku
-**https://lamaa-show.herokuapp.com/**
+
+Link Heroku:
+- **https://lamaa-show.herokuapp.com/**
 
 
 *** Infelizmente tivemos problemas com os testes e não conseguimos completa-los. 
