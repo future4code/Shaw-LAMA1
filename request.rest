@@ -51,10 +51,11 @@ Content-Type: application/json
 
 {
 
-        "week_day":"" ,
-         "start_time":"" ,
-         "end_time": "",
-         "band_id": ""
+        "week_day":"Sábado" ,
+         "start_time":"15" ,
+         "end_time": "16",
+         "band_id": "ecfd40cb-7d95-4599-8c92-6bc44c033e20"
+
 
 }
 
@@ -65,5 +66,5 @@ GET http://localhost:3003/shows/getAllshows
 Content-Type: application/json
 
 {
-"week_day": ""
+"week_day": "Sábado"
 }

@@ -10,4 +10,4 @@ const showController = new ShowController(showBussiness)
 
 
 showsRouter.post("/register",showController.signUpShow)
-showsRouter.get("getAllshows",showController.getAll)
+showsRouter.get("/getAllshows",showController.getAll)

@@ -4,12 +4,14 @@
      "module": "commonjs",
      "sourceMap": true,
      "outDir": "./build",
-     "rootDir": "",
+     "rootDir": "./src",
      "removeComments": true,
      "strict": true,
      "noImplicitAny": true,
      "esModuleInterop": true,
      "skipLibCheck": true,
      "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": ["tests"]
+
 }
