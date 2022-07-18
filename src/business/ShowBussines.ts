@@ -21,13 +21,13 @@ export default class ShowBussines {
         const { week_day, start_time, end_time, band_id } = showTime
 
 
-        if (week_day !== "Sexta-feira" || "Sábado" || "Domingo") {
-            throw new CustomError(400,"You can only book the shows on the weekend")
-        }
+        // if (week_day !== "Sexta-feira" || "Sábado" || "Domingo") {
+        //     throw new CustomError(400,"You can only book the shows on the weekend")
+        // }
 
-        if (start_time > 8 || start_time < 23) {
-            throw new CustomError(400,"you can only book the show on this until 23h")
-        }
+        // if (start_time > 8 || start_time < 23) {
+        //     throw new CustomError(400,"you can only book the show on this until 23h")
+        // }
 
         const id = this.idGenerate.generateId()
 
@@ -55,9 +55,9 @@ export default class ShowBussines {
             throw new CustomError(404,"Not Found")
         }
 
-        if(week_day !== "Sexta feira" && week_day !== "Sabado" && week_day !== "Domingo"){
-            throw new CustomError(400,"The shows only happen on the week_days")
-        }
+        // if(week_day !== "Sexta feira" && week_day !== "Sabado" && week_day !== "Domingo"){
+        //     throw new CustomError(400,"The shows only happen on the week_days")
+        // }
 
         const showHA = await this.showData.get(week_day)
         if (showHA.length===0) {
