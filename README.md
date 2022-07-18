@@ -1,5 +1,7 @@
 Labenu Music Awards 🎵🎤🎸
 
+o LAMA, *Labenu Musical Awards*, um festival com várias bandas famosas para a formatura da sua turma e, no final, vocês podem eleger a banda que mais gostaram! Entretanto, na opinião dele, vocês só serão merecedores se entregarem um sistema impecável que permita o gerenciamento completo desses shows.
+
 Endpoits criados:
 
 - 1. Cadastro
